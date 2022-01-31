@@ -1,0 +1,21 @@
+body {
+    background: linear-gradient( #009688 15%, #d8dbd6 15%);
+    height: 100vh;
+}
+
+main {
+    background: white;
+    height: 90%;
+}
+
+.col-4 {
+    border: 1px solid black;
+}
+
+.col-8 {
+    border: 1px solid black;
+}
+
+img {
+    border-radius: 100%;
+}
