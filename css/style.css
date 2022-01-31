@@ -19,3 +19,19 @@ main {
 img {
     border-radius: 100%;
 }
+
+.bg-gray {
+    background-color: #eaeaea;
+}
+
+.bg-lightblue {
+    background-color: #8edafc;
+}
+
+.border-radius {
+    border-radius: 100%;
+}
+
+.fa-bell-slash {
+    padding: 20px;
+}
