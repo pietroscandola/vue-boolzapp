@@ -8,24 +8,15 @@ main {
     height: 90%;
 }
 
-.col-4 {
-    border: 1px solid black;
+.overflow-y {
+    overflow-y: auto;
 }
 
-.col-8 {
-    border: 1px solid black;
-}
+
+/* Immagini */
 
 img {
     border-radius: 100%;
-}
-
-.bg-gray {
-    background-color: #eaeaea;
-}
-
-.bg-lightblue {
-    background-color: #8edafc;
 }
 
 .border-radius {
@@ -34,4 +25,19 @@ img {
 
 .fa-bell-slash {
     padding: 20px;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+
+/* Colori e BG */
+
+.bg-gray {
+    background-color: #eaeaea;
+}
+
+.bg-lightblue {
+    background-color: #8edafc;
 }
