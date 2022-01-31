@@ -29,12 +29,12 @@
                             <div class="row py-3">
                                 <div class="col d-flex align-items-center">
                                     <img class="w-25" src="img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="mx-3 fw-bolder">Nome Utente</div>
+                                    <div class="mx-3 fw-bolder">Pietro</div>
                                 </div>
                                 <div class="col d-flex align-items-center justify-content-end">
-                                    <i class="fas fa-circle-notch mx-1"></i>
-                                    <i class="fas fa-comment-alt mx-1"></i>
-                                    <i class="fas fa-ellipsis-v mx-1"></i>
+                                    <i class="fas fa-circle-notch mx-2"></i>
+                                    <i class="fas fa-comment-alt mx-2"></i>
+                                    <i class="fas fa-ellipsis-v mx-2"></i>
                                 </div>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                         <div class="col-12">
                             <div class="row py-3 bg-lightblue">
                                 <div class="col-2">
-                                    <i class="fas fa-bell-slash border-radius bg-white"></i>
+                                    <i class="fas fa-bell-slash border-radius bg-white cl-lightblue"></i>
                                 </div>
                                 <div class="col-10">
                                     <div class="fw-bold">Ricevi notifiche di nuovi messaggi</div>
@@ -63,53 +63,9 @@
                         <!-- Quarta Parte -->
                         <div class="col overflow-auto">
                             <div class="row flex-column ">
-                                <div class="col d-flex align-items-center my-2 py-2 bg-gray">
-                                    <img class="w-15" src="img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="mx-3 fw-bolder">Nome Utente</div>
-                                </div>
-                                <div class="col d-flex align-items-center my-2 py-2">
-                                    <img class="w-15" src="img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="mx-3">Nome Utente</div>
-                                </div>
-                                <div class="col d-flex align-items-center my-2 py-2">
-                                    <img class="w-15" src="img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="mx-3">Nome Utente</div>
-                                </div>
-                                <div class="col d-flex align-items-center my-2 py-2">
-                                    <img class="w-15" src="img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="mx-3">Nome Utente</div>
-                                </div>
-                                <div class="col d-flex align-items-center my-2 py-2">
-                                    <img class="w-15" src="img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="mx-3">Nome Utente</div>
-                                </div>
-                                <div class="col d-flex align-items-center my-2 py-2">
-                                    <img class="w-15" src="img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="mx-3">Nome Utente</div>
-                                </div>
-                                <div class="col d-flex align-items-center my-2">
-                                    <img class="w-15" src="img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="mx-3">Nome Utente</div>
-                                </div>
-                                <div class="col d-flex align-items-center my-2 py-2">
-                                    <img class="w-15" src="img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="mx-3">Nome Utente</div>
-                                </div>
-                                <div class="col d-flex align-items-center my-2 py-2">
-                                    <img class="w-15" src="img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="mx-3">Nome Utente</div>
-                                </div>
-                                <div class="col d-flex align-items-center my-2 py-2">
-                                    <img class="w-15" src="img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="mx-3">Nome Utente</div>
-                                </div>
-                                <div class="col d-flex align-items-center my-2 py-2">
-                                    <img class="w-15" src="img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="mx-3">Nome Utente</div>
-                                </div>
-                                <div class="col d-flex align-items-center my-2 py-2">
-                                    <img class="w-15" src="img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="mx-3">Nome Utente</div>
+                                <div v-for="(contact,index) in contacts" class="col d-flex align-items-center py-2" :class="{active :isActive(index)}" @click="setContact(index)">
+                                    <img class="w-15" :src="`img/avatar${contact.avatar}.jpg`" :alt="`avatar${contact.avatar}`">
+                                    <div class="mx-3 fw-bolder">{{contact.name}}</div>
                                 </div>
                             </div>
                         </div>
@@ -122,10 +78,10 @@
                         <!-- Top Section -->
                         <div class="col-12 bg-gray">
                             <div class="row py-2">
-                                <div class="col d-flex align-items-center">
-                                    <img class="w-15" src="img/avatar_io.jpg" alt="avatar_io">
+                                <div v-for="(contact,index) in contacts" class="col d-flex align-items-center" v-if="isActive(index)">
+                                    <img class="w-15" :src="`img/avatar${contact.avatar}.jpg`" :alt="`avatar${contact.avatar}`">
                                     <div class="mx-3">
-                                        <div>Nome Utente</div>
+                                        <div class="fw-bolder">{{contact.name}}</div>
                                         <div class="fs-12px">Ultimo accesso oggi alle</div>
                                     </div>
                                 </div>

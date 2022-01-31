@@ -10,6 +10,7 @@ Vue.config.devtools = true;
 const root = new Vue({
     el: '#root',
     data: {
+        currentIndex: 0,
         user: {
             name: 'Nome Utente',
             avatar: '_io'
@@ -32,5 +33,13 @@ const root = new Vue({
             },
         ],
     },
-    methods: {},
+    methods: {
+        isActive(index) {
+            return index === this.currentIndex;
+        },
+
+        setContact(index) {
+            this.currentIndex = index;
+        }
+    },
 });

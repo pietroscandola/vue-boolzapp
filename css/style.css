@@ -34,12 +34,16 @@ img {
 
 /* Colori e BG */
 
-.bg-gray {
+.active {
     background-color: #eaeaea;
 }
 
 .bg-lightblue {
     background-color: #8edafc;
+}
+
+.cl-lightblue {
+    color: #8edafc;
 }
 
 
@@ -48,3 +52,9 @@ img {
 .fs-12px {
     font-size: 12px;
 }
+
+[class^="col"] {
+    cursor: pointer;
+}
+
+;
