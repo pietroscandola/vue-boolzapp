@@ -42,6 +42,18 @@ img {
     background-color: #8edafc;
 }
 
+.bg-my-messages {
+    background-color: #d5f9ba;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.bg-messages {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
 .cl-lightblue {
     color: #8edafc;
 }
@@ -56,5 +68,3 @@ img {
 [class^="col"] {
     cursor: pointer;
 }
-
-;
