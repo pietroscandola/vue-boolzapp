@@ -8,10 +8,6 @@ main {
     height: 90%;
 }
 
-.overflow-y {
-    overflow-y: auto;
-}
-
 
 /* Immagini */
 
@@ -40,4 +36,11 @@ img {
 
 .bg-lightblue {
     background-color: #8edafc;
+}
+
+
+/* Font-Size */
+
+.fs-12px {
+    font-size: 12px;
 }
