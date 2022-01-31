@@ -27,6 +27,11 @@ img {
     width: 15%;
 }
 
+.bg-image {
+    background-image: url("../img/mine.jpg");
+    height: 80%;
+}
+
 
 /* Colori e BG */
 
