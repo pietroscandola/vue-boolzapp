@@ -116,29 +116,12 @@ const root = new Vue({
         setContact(index) {
             this.currentIndex = index;
         },
-        /*         onSubmit() {
-                    this.addNewMessage(this.newMessage.trim());
-
-                    setTimeout(() => this.addNewMessage('OK'), 1000);
-                },
-
-                addNewMessage(newMessage) {
-                    if (newMessage !== '') {
-                        const newObject = {
-                            date: '01/02/2022 17:50:00',
-                            text: newMessage,
-                            status: 'sent',
-                        }
-                        this.contacts[this.currentIndex].messages.push(newObject);
-                        this.newMessage = '';
-                    }
-                }, */
 
         addNewMessage() {
             const newMessage = this.newMessage.trim();
             if (newMessage !== '') {
                 const newObject = {
-                    date: '01/02/2022 17:50:00',
+                    date: dayjs().format('DD/MM/YYYY HH:mm'),
                     text: newMessage,
                     status: 'sent',
                 }
@@ -151,7 +134,7 @@ const root = new Vue({
 
         addRecivedMessage() {
             const newObject = {
-                date: '01/02/2022 17:50:00',
+                date: dayjs().format('DD/MM/YYYY HH:mm'),
                 text: 'OK',
                 status: 'received',
             }
