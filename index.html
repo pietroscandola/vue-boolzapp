@@ -93,16 +93,19 @@
                             </div>
                         </div>
                         <!-- Main Section -->
-                        <div class="col bg-image overflow-auto">
+                        <div v-for="(contact,index) in contacts" class="col bg-image overflow-auto" v-if="isActive(index)">
                             <div class="message d-flex sent">
                                 <span class="message bg-sent">
-                                    Hai Fatto la spesa?
-                               </span>
+                                    <p></p>
+                                    <time class="fs-10px">01/02/2022</time>
+                                </span>
+
                             </div>
                             <div class="message d-flex received">
                                 <span class="message bg-received">
-                                    Si!
-                               </span>
+                                    <p></p>
+                                    <time class="fs-10px">01/02/2022</time>
+                                </span>
                             </div>
                         </div>
 
@@ -113,7 +116,8 @@
                                     <i class="far fa-grin fs-4"></i>
                                 </div>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1"> </div>
+                                    <input type="text" class="form-control" placeholder="Scrivi un messaggio" @keyup.enter="addNewMessage" v-model="newMessage">
+                                </div>
                                 <div class="col-1 d-flex justify-content-center">
                                     <i class="fas fa-microphone fs-4"></i>
                                 </div>

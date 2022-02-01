@@ -21,6 +21,7 @@ Vue.config.devtools = true;
 const root = new Vue({
     el: '#root',
     data: {
+        newMessage: '',
         currentIndex: 0,
         user: {
             name: 'Pietro',
@@ -114,6 +115,19 @@ const root = new Vue({
 
         setContact(index) {
             this.currentIndex = index;
-        }
+        },
+
+        addNewMessage() {
+            const newMessage = this.newMessage.trim();
+            if (newMessage !== '') {
+                const newObject = {
+                    date: '01/02/2022 17:50:00',
+                    text: newMessage,
+                    status: 'sent',
+                }
+                this.contacts.push(newObject);
+                this.newMessage = '';
+            }
+        },
     },
 });
