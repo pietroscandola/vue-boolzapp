@@ -25,7 +25,7 @@
                 <!-- Left Section -->
                 <div class="col-4 h-100">
                     <div class="row flex-column h-100 border-end">
-                        <!-- Prima Parte -->
+                        <!-- User Menu -->
                         <div class="col-12 bg-gray">
                             <div class="row py-3">
                                 <div class="col d-flex align-items-center">
@@ -40,7 +40,7 @@
                             </div>
                         </div>
 
-                        <!-- Seconda Parte -->
+                        <!-- Notification Menu -->
                         <div class="col-12">
                             <div class="row py-3 bg-lightblue">
                                 <div class="col-2">
@@ -53,7 +53,7 @@
                             </div>
                         </div>
 
-                        <!-- Terza Parte -->
+                        <!-- Search Menu -->
                         <div class="col-12 py-3">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-search"></i></span>
@@ -61,7 +61,7 @@
                             </div>
                         </div>
 
-                        <!-- Quarta Parte -->
+                        <!-- Contacts Menu -->
                         <div class="col overflow-auto">
                             <div class="row flex-column ">
                                 <div v-for="(contact,index) in contacts" class="col d-flex align-items-center py-2" :class="{active :isActive(index)}" @click="setContact(index)">
@@ -76,6 +76,7 @@
                 <!-- Right Section -->
                 <div class="col-8 h-100">
                     <div class="row flex-column h-100">
+
                         <!-- Top Section -->
                         <div class="col-12 bg-gray">
                             <div class="row py-2">
@@ -93,6 +94,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- Main Section -->
                         <div class="col bg-image overflow-auto">
                             <div v-for="(message,index) in contacts[currentIndex].messages">
@@ -104,7 +106,6 @@
                                 </div>
                             </div>
                         </div>
-
 
                         <!-- Bottom Section -->
                         <div class="col-12 py-4">
@@ -120,6 +121,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
