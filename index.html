@@ -28,8 +28,8 @@
                         <div class="col-12 bg-gray">
                             <div class="row py-3">
                                 <div class="col d-flex align-items-center">
-                                    <img class="w-25" src="img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="mx-3 fw-bolder">Pietro</div>
+                                    <img class="w-25" :src="`img/avatar${user.avatar}.jpg`" :alt="user.avatar">
+                                    <div class="mx-3 fw-bolder">{{user.name}}</div>
                                 </div>
                                 <div class="col d-flex align-items-center justify-content-end">
                                     <i class="fas fa-circle-notch mx-2"></i>
@@ -64,7 +64,7 @@
                         <div class="col overflow-auto">
                             <div class="row flex-column ">
                                 <div v-for="(contact,index) in contacts" class="col d-flex align-items-center py-2" :class="{active :isActive(index)}" @click="setContact(index)">
-                                    <img class="w-15" :src="`img/avatar${contact.avatar}.jpg`" :alt="`avatar${contact.avatar}`">
+                                    <img class="w-15" :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.avatar">
                                     <div class="mx-3 fw-bolder">{{contact.name}}</div>
                                 </div>
                             </div>
@@ -111,14 +111,13 @@
                                           Tutto fatto!
                                         </span>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
 
                         <!-- Bottom Section -->
                         <div class="col-12 py-4">
-                            <div class="row align-items-center">
+                            <div class="row align-items-center bg-gray">
                                 <div class="col-1 d-flex justify-content-center">
                                     <i class="far fa-grin fs-4"></i>
                                 </div>

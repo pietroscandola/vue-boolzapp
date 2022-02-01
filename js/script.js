@@ -12,7 +12,7 @@ const root = new Vue({
     data: {
         currentIndex: 0,
         user: {
-            name: 'Nome Utente',
+            name: 'Pietro',
             avatar: '_io'
         },
         contacts: [{
