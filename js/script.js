@@ -21,6 +21,7 @@ Vue.config.devtools = true;
 const root = new Vue({
     el: '#root',
     data: {
+        newSearchUser: '',
         newMessage: '',
         currentIndex: 0,
         user: {
@@ -139,6 +140,17 @@ const root = new Vue({
                 status: 'received',
             }
             this.contacts[this.currentIndex].messages.push(newObject);
-        }
+        },
+
+        /* searchUser(index) {
+            const newSearch = this.newSearchUser.trim();
+            const result = contacts.filter((contact, index) => {
+                if (contact[index].name === newSearch) {
+                    return true;
+                }
+                return false;
+            })
+            console.log(result)
+        }, */
     },
 });
