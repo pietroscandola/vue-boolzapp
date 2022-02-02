@@ -55,16 +55,16 @@
 
                         <!-- Search Menu -->
                         <div class="col-12 py-3">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text"><i class="fas fa-search"></i></span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="newSearchUser">
+                            <div v-for="(contact,index) in contacts" v-if="isActive(index)" class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-search" ></i></span>
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="newSearchUser" @keyup="searchUser">
                             </div>
                         </div>
 
                         <!-- Contacts Menu -->
                         <div class="col overflow-auto">
                             <div class="row flex-column ">
-                                <div v-for="(contact,index) in contacts" class="col d-flex align-items-center py-2" :class="{active :isActive(index)}" @click="setContact(index)">
+                                <div v-for="(contact,index) in contacts" v-if="contact.visible === true" class="col d-flex align-items-center py-2" :class="{active :isActive(index)}" @click="setContact(index)">
                                     <img class="w-15" :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.avatar">
                                     <div class="mx-3 fw-bolder">{{contact.name}}</div>
                                 </div>
