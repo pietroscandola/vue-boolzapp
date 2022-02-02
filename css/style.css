@@ -84,3 +84,7 @@ img {
 .received {
     justify-content: flex-start;
 }
+
+.dropdown-menu.show {
+    transform: translate(64px, 26px) !important;
+}
