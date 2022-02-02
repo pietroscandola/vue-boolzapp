@@ -66,7 +66,10 @@
                             <div class="row flex-column ">
                                 <div v-for="(contact,index) in contacts" v-if="contact.visible" class="col d-flex align-items-center py-2" :class="{active :isActive(index)}" @click="setContact(index)">
                                     <img class="w-15" :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.avatar">
-                                    <div class="mx-3 fw-bolder">{{contact.name}}</div>
+                                    <div class="mx-3 ">
+                                        <div class="fw-bolder">{{contact.name}}</div>
+                                        <p v-for="(message,index) in contact.messages" v-if="contact.messages.length-1 === index">{{message.date}}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +87,7 @@
                                     <img class="w-15" :src="`img/avatar${contact.avatar}.jpg`" :alt="`avatar${contact.avatar}`">
                                     <div class="mx-3">
                                         <div class="fw-bolder">{{contact.name}}</div>
-                                        <div class="fs-12px">Ultimo accesso oggi alle</div>
+                                        <div v-for="(message,index) in contact.messages" v-if="contact.messages.length-1 === index" class="fs-12px">Ultimo accesso oggi alle {{message.date}}</div>
                                     </div>
                                 </div>
                                 <div class="col d-flex align-items-center justify-content-end">
