@@ -153,13 +153,13 @@ const root = new Vue({
 
         searchUser() {
             const newSearch = this.newSearchUser.trim().toLowerCase();
-            const result = this.contacts.filter((contact) => {
+            this.contacts.forEach((contact) => {
                 if (contact.name.toLowerCase().includes(newSearch)) {
-                    return contact.visible = true;
+                    contact.visible = true;
                 }
-                return contact.visible = false;
+                contact.visible = false;
             })
-            return result;
+
         },
 
         deleteMessage(index) {
