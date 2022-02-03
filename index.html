@@ -55,7 +55,7 @@
 
                         <!-- Search Menu -->
                         <div class="col-12 py-3">
-                            <div v-for="(contact,index) in contacts" v-if="isActive(index)" class="input-group mb-3">
+                            <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-search" ></i></span>
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="newSearchUser" @keyup="searchUser">
                             </div>
@@ -83,7 +83,7 @@
                         <!-- User Contact-->
                         <div class="col-12 bg-gray">
                             <div class="row py-2">
-                                <div v-for="(contact,index) in contacts" class="col d-flex align-items-center" v-if="isActive(index)">
+                                <div v-for="(contact,index) in contacts" v-if="isActive(index)" class="col d-flex align-items-center">
                                     <img class="w-15" :src="`img/avatar${contact.avatar}.jpg`" :alt="`avatar${contact.avatar}`">
                                     <div class="mx-3">
                                         <div class="fw-bolder">{{contact.name}}</div>
@@ -104,7 +104,7 @@
                                 <div class="message d-flex" :class="message.status">
                                     <span class="message" :class="message.status === 'sent' ? 'bg-sent' : 'bg-received'">
                                         <div class="dropdown">
-                                            <p class="m-0 dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">{{message.text}}</p>
+                                            <p class="m-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{message.text}}</p>
                                             <ul class="dropdown-menu">
                                                 <li class="dropdown-item">Info Messaggio</li>
                                                 <li class="dropdown-item" @click="deleteMessage(index) ">Cancella Messaggio</li>                                                                                            

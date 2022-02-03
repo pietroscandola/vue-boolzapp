@@ -159,7 +159,6 @@ const root = new Vue({
                 }
                 contact.visible = false;
             })
-
         },
 
         deleteMessage(index) {
